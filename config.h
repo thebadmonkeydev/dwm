@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -16,7 +16,7 @@ static const char col_red[]        = "#c07000";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_red  },
+	[SchemeSel]  = { col_gray4, col_gray1,  col_red  },
 };
 
 /* tagging */
@@ -60,7 +60,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *surfcmd[]  = { "surf", "https://duckduckgo.com", NULL };
-static const char *srcmd[]  = { "/home/michael/.local/src/scripts/src_term.sh", NULL };
+static const char *srcmd[]  = { "/home/michael/.local/src/scripts/src_term", NULL };
 static const char *calcmd[]  = { "st", "-d", "/home/michael/.local/src/calendly", NULL };
 
 static Key keys[] = {
