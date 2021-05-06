@@ -1028,13 +1028,16 @@ fake_signal(void)
 			paramn = sscanf(fsignal+len_indicator, "%s%n%s%n", str_sig, &len_str_sig, param, &n);
 
 			if (paramn == 1) arg = (Arg) {0};
-			else if (paramn > 2) return 1;
+			/*else if (paramn > 2) return 1;*/
 			else if (strncmp(param, "i", n - len_str_sig) == 0)
 				sscanf(fsignal + len_indicator + n, "%i", &(arg.i));
 			else if (strncmp(param, "ui", n - len_str_sig) == 0)
 				sscanf(fsignal + len_indicator + n, "%u", &(arg.ui));
 			else if (strncmp(param, "f", n - len_str_sig) == 0)
 				sscanf(fsignal + len_indicator + n, "%f", &(arg.f));
+			else if (strncmp(param, "v", n - len_str_sig) == 0) {
+				sscanf(fsignal + len_indicator + n, "%s", &(arg.v));
+      }
 			else return 1;
 
 			// Check if a signal was found, and if so handle it

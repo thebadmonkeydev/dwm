@@ -129,43 +129,50 @@ static Button buttons[] = {
 void
 setlayoutex(const Arg *arg)
 {
-       setlayout(&((Arg) { .v = &layouts[arg->i] }));
+  setlayout(&((Arg) { .v = &layouts[arg->i] }));
 }
 
 void
 viewex(const Arg *arg)
 {
-       view(&((Arg) { .ui = 1 << arg->ui }));
+  view(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 viewall(const Arg *arg)
 {
-       view(&((Arg){.ui = ~0}));
+  view(&((Arg){.ui = ~0}));
 }
 
 void
 toggleviewex(const Arg *arg)
 {
-       toggleview(&((Arg) { .ui = 1 << arg->ui }));
+  toggleview(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 tagex(const Arg *arg)
 {
-       tag(&((Arg) { .ui = 1 << arg->ui }));
+  tag(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 toggletagex(const Arg *arg)
 {
-       toggletag(&((Arg) { .ui = 1 << arg->ui }));
+  toggletag(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 void
 tagall(const Arg *arg)
 {
-       tag(&((Arg){.ui = ~0}));
+  tag(&((Arg){.ui = ~0}));
+}
+
+void
+spawnc(const Arg *arg)
+{
+  die(arg->v);
+  spawn(&((Arg){ .v = arg->v }));
 }
 
 /* signal definitions */
@@ -195,5 +202,6 @@ static Signal signals[] = {
        { "quit",           quit },
        { "setlayout",      setlayout },
        { "setlayoutex",    setlayoutex },
+       { "spawn",          spawnc },
 };
 
