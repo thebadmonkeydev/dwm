@@ -6,14 +6,19 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 15;        /* default gap width between client windows */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Term:size=10" };
+
+static const char *fonts[]          = {
+  "FontAwesome:size=10",
+  "Iosevka Term:size=10"
+};
+
 static const char dmenufont[]       = "Iosevka Term:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char col_red[]        = "#c07000";
+static const char col_gray1[]       = "#1d2021";
+static const char col_gray2[]       = "#928374";
+static const char col_gray3[]       = "#ebdbb2";
+static const char col_gray4[]       = "#458588";
+static const char col_cyan[]        = "#689d6a";
+static const char col_red[]        = "#fabd2f";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
